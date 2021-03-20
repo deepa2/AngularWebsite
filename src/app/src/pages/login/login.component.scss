@@ -1,0 +1,28 @@
+.my-card {
+  position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 120px;
+    background: #00000012;
+    box-shadow: none;
+    text-align: center;
+    width: 200px;
+}
+.mat-card-actions,
+.mat-card-content,
+.mat-card-subtitle {
+  margin: 0;
+}
+
+.mat-card-actions .mat-button,
+.mat-card-actions .mat-raised-button {
+  width: 50%;
+}
+
+.mat-card-actions .mat-button {
+  width: 40%;
+}
+

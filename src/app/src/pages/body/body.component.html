@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="page-title">
+  {{pageTitle}}
+</div>
+
+<mat-tab-group color="primary" #tabGroup>
+  <!-- users list component -->
+  <mat-tab label="Users List">
+    <ng-template matTabContent>
+      <div>
+        <!-- redirect to tab 2 on click -->
+        <app-user-list (eventClicked)="childEventClicked($event)" (click)="tabGroup.selectedIndex=1"></app-user-list>
+      </div>
+    </ng-template>
+  </mat-tab>
+
+  <!-- user profile component -->
+  <mat-tab label="User Profile">
+    <ng-template matTabContent>
+      <div>
+        <!-- sending clicked data to user profile component as input -->
+        <app-user-profile [event]="clickedEvent"></app-user-profile>
+      </div>
+    </ng-template>
+  </mat-tab>
+
+</mat-tab-group>

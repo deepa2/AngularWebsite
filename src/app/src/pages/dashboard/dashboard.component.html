@@ -1,0 +1,73 @@
+<!-- <mat-toolbar>
+  <mat-toolbar-row>
+    <span class="menu-spacer"></span>
+    <div>
+      <a mat-button (click)="toggle('post')"> Posts </a>
+      <a mat-button (click)="toggle('album')"> Albums </a>
+      <a mat-button (click)="toggle('toDo')"> To Dos </a>
+
+      <span class="right-menu">
+        <a href="https://torinit.com/"> Torinit </a>
+        ({{userDetails?.email}})
+        <a mat-button (click)="logout()">Logout </a>
+      </span>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar> -->
+<app-header></app-header>
+<mat-card-content>
+  <div *ngIf="isPosts">
+    <div class="search-card">
+      <input class="search-input" matInput placeholder="Search" [(ngModel)]="searchInput">
+      <mat-icon>search</mat-icon>
+    </div>
+
+    <div *ngFor="let post of postData | search: searchInput">
+      <div class="post-card">
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title class="post-title">
+              {{post?.title}}
+              <!-- ({{getComments(post?.id)}} Comments) -->
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="post-content">
+            {{post?.body}}
+          </div>
+        </mat-expansion-panel>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="isAlbums">
+    <div class="sort">
+      Sort
+      <mat-icon (click)="aplhaSort()">keyboard_arrow_down</mat-icon>
+      <mat-icon (click)="sort()">keyboard_arrow_up</mat-icon>
+    </div>
+    <div class="album-card">
+      <div *ngFor="let album of albumsData" class="album-title">
+        {{album?.title}}
+        <!-- ({{getPhotos(album?.id)}} Photos) -->
+        <span class="link" (click)="openDialog(album?.id)"> View Photos</span>
+      </div>
+      <div>
+
+      </div>
+    </div>
+
+
+  </div>
+  <div *ngIf="isToDos">
+    <div class="toggle-button">
+      <span>To Do List</span>
+      <mat-slide-toggle [(ngModel)]="isChecked" class="example-margin" (toggleChange)="displayCompleted()">
+        Display Completed.
+      </mat-slide-toggle>
+    </div>
+    <div class="todo-content">
+      <div *ngFor="let toDo of toDosFilteredData">
+        <mat-checkbox class="example-margin" [(ngModel)]="toDo.completed">{{toDo?.title}}</mat-checkbox>
+      </div>
+    </div>
+  </div>
+</mat-card-content>

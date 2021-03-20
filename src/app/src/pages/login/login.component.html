@@ -1,0 +1,18 @@
+<div class="container">
+  <mat-card class="my-card">
+    <mat-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+        <mat-form-field class="full-width">
+          <mat-label>Username</mat-label>
+          <input matInput placeholder="Username" formControlName="username" >
+          <mat-error>
+            <span *ngIf="errorHandling('username', 'required')">Username is required</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" [disabled]="loading">LOGIN</button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

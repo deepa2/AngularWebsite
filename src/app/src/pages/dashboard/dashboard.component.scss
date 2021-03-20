@@ -1,0 +1,49 @@
+.post-card{
+  border: 1px solid;
+}
+.post-title{
+  padding: 0 10px;
+  border-bottom: 1px solid;
+  background-color: #78a7ff;
+}
+.post-content{
+  padding: 10px;
+}
+.search-card{
+display: flex;
+padding: 10px 0;
+align-items: center;
+.search-input{
+  padding: 5px;
+  margin-right: 10px;
+}
+}
+.album-card{
+  padding: 10px;
+  border: 1px solid;
+}
+
+.album-title{
+  padding: 10px 0;
+}
+
+.link{
+color: blue;
+border-bottom: 1px solid blue;
+}
+
+.toggle-button{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0 0;
+}
+.todo-content{
+  padding: 10px 5px;
+  border: 1px solid;
+}
+.sort{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 0;
+}

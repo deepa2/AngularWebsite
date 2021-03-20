@@ -1,0 +1,89 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="jumbotron">
+        <form name="form" (ngSubmit)="userForm.form.valid && onSubmit(userForm)" #userForm="ngForm" novalidate>
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" [(ngModel)]="model.firstName" #firstName="ngModel" [ngClass]="{'is-invalid':userForm.submitted && firstName.invalid}"
+              name="firstName" required />
+            <div class="invalid-feedback" *ngIf="userForm.submitted && firstName.invalid">
+              <div>First Name is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" [(ngModel)]="model.lastName" #lastName="ngModel" [ngClass]="{'is-invalid':userForm.submitted && lastName.invalid}"
+              name="lastName" required />
+            <div class="invalid-feedback" *ngIf="userForm.submitted && lastName.invalid">
+              <div>Last Name is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{'is-invalid':userForm.submitted && email.invalid}"
+              name="email" required email pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
+            <div *ngIf="userForm.submitted && email.invalid" class="invalid-feedback">
+              <div *ngIf="email.errors.required">Email is required</div>
+              <div *ngIf="email.errors.pattern">Email must be a valid email Address</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <textarea rows="4" cols="50" class="form-control" placeholder="Type here..." #address="ngModel" name="address"
+              [(ngModel)]="model.address" [ngClass]="{'is-invalid':userForm.submitted && address.invalid}" required></textarea>
+            <div *ngIf="userForm.submitted && address.invalid" class="invalid-feedback">
+              <div *ngIf="address.errors.required">Address is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <select id="inputState" #state="ngModel" [(ngModel)]="model.state" name="state" [ngClass]="{'is-invalid' : userForm.submitted && state.invalid }"
+              required>
+              <option [ngValue]="none" selected disabled>Select State</option>
+              <option *ngFor="let stateName of stateNames" [value]="stateName">{{stateName}}</option>
+            </select>
+            <div *ngIf="userForm.submitted && state.invalid" class="invalid-feedback">
+              <div *ngIf="state.errors.required">State is required</div>
+            </div>
+
+          </div>
+          <div class="form-group">
+
+            <input type="radio" value="male" name="gender" required #gender="ngModel" [(ngModel)]="model.gender"> Male
+            <input type="radio" value="female" name="gender" required #gender="ngModel" [(ngModel)]="model.gender">
+            Female
+            <div *ngIf="userForm.submitted && gender.invalid" class="invalid-feedback">
+              <div *ngIf="gender.errors.required"> The gender is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="progLanguages">Programming Languages:</label>
+            <div *ngFor="let language of progLanguages">
+              <label>
+                <input type="checkbox" (change)="check()" name="progLanguages" value="{{language.name}}" [(ngModel)]="language.checked"
+                  required />
+                {{language.name}}
+              </label>
+            </div>
+
+            <div *ngIf="nonChecked && userForm.submitted" class="invalid-feedback">Kindly select atleast one language</div>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div *ngIf="isFormSubmitted">
+  <div>
+    Data submitted successfully
+  </div>
+  <div>
+    {{userForm.value | json}}
+  </div>
+</div>

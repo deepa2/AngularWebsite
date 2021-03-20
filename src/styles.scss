@@ -1,1 +1,202 @@
-/* You can add global styles to this file, and also import other style files */
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$tej-computers-site-primary: mat-palette($mat-indigo);
+$tej-computers-site-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$tej-computers-site-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$tej-computers-site-theme: mat-light-theme($tej-computers-site-primary, $tej-computers-site-accent, $tej-computers-site-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($tej-computers-site-theme);
+
+
+// // Custom Theming for Angular Material
+// // For more information: https://material.angular.io/guide/theming
+// @import '~@angular/material/theming';
+// // @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+// // @import '~@angular/material/_theming.scss';
+// // Plus imports for other components in your app.
+
+// // Include the common styles for Angular Material. We include this here so that you only
+// // have to load a single css file for Angular Material in your app.
+// // Be sure that you only ever include this mixin once!
+// @include mat-core();
+
+// $primary-palette: (
+//     50 : #e9f0f1,
+//     100 : #c7d9dd,
+//     200 : #a2c0c6,
+//     300 : #7da7af,
+//     400 : #61949d,
+//     500 : #45818c,
+//     600 : #3e7984,
+//     700 : #366e79,
+//     800 : #2e646f,
+//     900 : #1f515c,
+//     A100 : #9cecff,
+//     A200 : #69e3ff,
+//     A400 : #36d9ff,
+//     A700 : #1dd4ff,
+//     contrast: (
+//         50 : #000000,
+//         100 : #000000,
+//         200 : #000000,
+//         300 : #000000,
+//         400 : #000000,
+//         500 : #ffffff,
+//         600 : #ffffff,
+//         700 : #ffffff,
+//         800 : #ffffff,
+//         900 : #ffffff,
+//         A100 : #000000,
+//         A200 : #000000,
+//         A400 : #000000,
+//         A700 : #000000,
+//     )
+// );
+// // Define the palettes for your theme using the Material Design palettes available in palette.scss
+// // (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// // hue. Available color palettes: https://material.io/design/color/
+// $tej-computers-site-primary: mat-palette($mat-indigo);
+// $tej-computers-site-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// // The warn palette is optional (defaults to red).
+// $tej-computers-site-warn: mat-palette($mat-red);
+
+// // Create the theme object. A theme consists of configurations for individual
+// // theming systems such as "color" or "typography".
+// $tej-computers-site-theme: mat-light-theme((
+//   color: (
+//     primary: $tej-computers-site-primary,
+//     accent: $tej-computers-site-accent,
+//     warn: $tej-computers-site-warn,
+//   )
+// ));
+
+// // Include theme styles for core and each component used in your app.
+// // Alternatively, you can import and @include the theme mixins for each component
+// // that you are using.
+// @include angular-material-theme($tej-computers-site-theme);
+
+
+// // Custom Theming for Angular Material
+// // For more information: https://material.angular.io/guide/theming
+// // @import '~@angular/material/theming';
+// // Plus imports for other components in your app.
+
+// // Include the common styles for Angular Material. We include this here so that you only
+// // have to load a single css file for Angular Material in your app.
+// // Be sure that you only ever include this mixin once!
+// // @include mat-core();
+
+// // Define the palettes for your theme using the Material Design palettes available in palette.scss
+// // (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// // hue. Available color palettes: https://material.io/design/color/
+// // $tej-computers-site-primary: mat-palette($mat-indigo);
+// // $tej-computers-site-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// // The warn palette is optional (defaults to red).
+// // $tej-computers-site-warn: mat-palette($mat-red);
+
+// // Create the theme object. A theme consists of configurations for individual
+// // theming systems such as "color" or "typography".
+// // $tej-computers-site-theme: mat-light-theme((
+// //   color: (
+// //     primary: $tej-computers-site-primary,
+// //     accent: $tej-computers-site-accent,
+// //     warn: $tej-computers-site-warn,
+// //   )
+// // ));
+
+// // Include theme styles for core and each component used in your app.
+// // Alternatively, you can import and @include the theme mixins for each component
+// // that you are using.
+// // @include angular-material-theme($tej-computers-site-theme);
+
+// /* You can add global styles to this file, and also import other style files */
+
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import "~@angular/material/theming";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@include mat-core();
+
+// generated custom palette
+// $primary-palette: (
+//     50 : #e9f0f1,
+//     100 : #c7d9dd,
+//     200 : #a2c0c6,
+//     300 : #7da7af,
+//     400 : #61949d,
+//     500 : #45818c,
+//     600 : #3e7984,
+//     700 : #366e79,
+//     800 : #2e646f,
+//     900 : #1f515c,
+//     A100 : #9cecff,
+//     A200 : #69e3ff,
+//     A400 : #36d9ff,
+//     A700 : #1dd4ff,
+//     contrast: (
+//         50 : #000000,
+//         100 : #000000,
+//         200 : #000000,
+//         300 : #000000,
+//         400 : #000000,
+//         500 : #ffffff,
+//         600 : #ffffff,
+//         700 : #ffffff,
+//         800 : #ffffff,
+//         900 : #ffffff,
+//         A100 : #000000,
+//         A200 : #000000,
+//         A400 : #000000,
+//         A700 : #000000,
+//     )
+// );
+
+// $primary: mat-palette($primary-palette);
+// $secondary: mat-palette($mat-blue);
+// $warn: mat-palette($mat-yellow);
+
+// $theme: mat-dark-theme($primary, $secondary, $warn);
+
+$primary: mat-palette($mat-indigo);
+$secondary: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as `color` or `typography`.
+$candy-app-theme: mat-light-theme($primary,$secondary,$warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($candy-app-theme);
+
+app-album-modal{
+    height: 200px;
+    width: 200px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

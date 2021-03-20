@@ -1,0 +1,7 @@
+<mat-dialog-content class="mat-typography">
+  <div class="photos-list">
+    <mat-card class="photo-card" *ngFor=" let photo of photosData">
+      <img src="{{photo?.thumbnailUrl}}" alt="{{photo?.title}}">
+    </mat-card>
+  </div>
+</mat-dialog-content>

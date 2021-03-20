@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "website": {
+    "tej-computers-site": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/website",
+            "outputPath": "dist/tej-computers-site",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "website:build"
+            "browserTarget": "tej-computers-site:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "website:build:production"
+              "browserTarget": "tej-computers-site:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "website:build"
+            "browserTarget": "tej-computers-site:build"
           }
         },
         "test": {
@@ -107,7 +107,7 @@
         }
       }
     },
-    "website-e2e": {
+    "tej-computers-site-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -116,11 +116,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "website:serve"
+            "devServerTarget": "tej-computers-site:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "website:serve:production"
+              "devServerTarget": "tej-computers-site:serve:production"
             }
           }
         },
@@ -136,5 +136,5 @@
       }
     }
   },
-  "defaultProject": "website"
+  "defaultProject": "tej-computers-site"
 }
